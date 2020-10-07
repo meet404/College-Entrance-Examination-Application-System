@@ -29,6 +29,24 @@ public class SchoolController {
 		return "admin/pages/tables/school-list";
 	}
 
+	/**
+	 * 跳转查大学页面，分页查询
+	 */
+	@RequestMapping("/schoolList/{pages}")
+	public String searchSchool(@PathVariable("pages") int pages, Model model) {
+		List<School> schoolList = schoolService.findAllPages(pages);
+		model.addAttribute("schoolList",schoolList);
+		int count = schoolService.count();
+		model.addAttribute("count",count);
+		model.addAttribute("pages",pages);
+		if (count%15 != 0 ){
+			model.addAttribute("allPages",count/15 + 1);
+		}else {
+			model.addAttribute("allPages",count/15);
+		}
+		return "admin/pages/tables/school-list";
+	}
+
 	@RequestMapping("/toAdd")
 	public String toAddSchool() {
 		return "admin/pages/forms/forms-filling";

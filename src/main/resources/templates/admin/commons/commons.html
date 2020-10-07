@@ -72,7 +72,7 @@
             <p>导航</p>
             <span></span>
         </li>
-        <li class="nav-item">
+        <li th:class="${active=='index'?'nav-item active':'nav-item'}">
             <a class="nav-link" th:href="@{/admin/}">
                 <i class="mdi mdi-view-quilt menu-icon"></i>
                 <span class="menu-title">首页</span>
@@ -83,13 +83,13 @@
             <p>功能</p>
             <span></span>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/school/findAll}">
+        <li th:class="${active=='school-list.html'?'nav-item active':'nav-item'}">
+            <a class="nav-link" th:href="@{/school/schoolList/1}">
                 <i class="mdi mdi-notification-clear-all menu-icon"></i>
                 <span class="menu-title">学校列表</span>
             </a>
         </li>
-        <li class="nav-item">
+        <li th:class="${active=='majors-list.html'?'nav-item active':'nav-item'}">
             <a class="nav-link" th:href="@{/major/findAll}">
                 <i class="mdi mdi-apps menu-icon"></i>
                 <span class="menu-title">专业管理</span>

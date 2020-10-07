@@ -1,6 +1,8 @@
 package com.wzq;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.wzq.mapper.MajorMapper;
 import com.wzq.mapper.SchoolMapper;
 import com.wzq.mapper.ScoreMapper;
@@ -82,4 +84,17 @@ class TcDemo01ApplicationTests {
 		System.out.println(list);
 	}
 
+	@Test
+	public void test8(){
+		List<Major> list = majorMapper.findAllByName("工业");
+		System.out.println(list);
+	}
+
+	@Test
+	public void test9(){
+		PageHelper.startPage(1,1);
+		List<Major> all = majorMapper.findAll();
+		PageInfo<Major> pageInfo = new PageInfo<>(all);
+		System.out.println(pageInfo);
+	}
 }

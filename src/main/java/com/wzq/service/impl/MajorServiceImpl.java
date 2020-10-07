@@ -1,7 +1,9 @@
 package com.wzq.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wzq.mapper.MajorMapper;
 import com.wzq.pojo.Major;
+import com.wzq.pojo.School;
 import com.wzq.service.MajorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,31 @@ public class MajorServiceImpl implements MajorService {
 	@Override
 	public int addMajor(Major major) {
 		return majorMapper.insert(major);
+	}
+
+	@Override
+	public Major findMajorById(long id) {
+		return majorMapper.selectById(id);
+	}
+
+	@Override
+	public int updateMajor(Major major) {
+		return majorMapper.updateById(major);
+	}
+
+	@Override
+	public List<Major> findAllByName(String name) {
+		return majorMapper.findAllByName(name);
+	}
+
+	@Override
+	public int count() {
+		return majorMapper.count();
+	}
+
+	@Override
+	public int deleteMajor(long id) {
+		return majorMapper.deleteById(id);
 	}
 
 }

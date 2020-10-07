@@ -19,7 +19,7 @@
   <div class="container-scroller d-flex">
     <!-- partial:../../partials/_sidebar.html -->
     <!--侧边栏-->
-    <div th:replace="~{admin/commons/commons::sidebar}"></div>
+    <div th:replace="~{admin/commons/commons::sidebar(active='majors-list.html')}"></div>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_navbar.html -->
@@ -45,7 +45,7 @@
                       </div>
                       <div style="float: left">&nbsp;&nbsp;&nbsp;&nbsp;</div>
                       <div style="display: inline;float: left">
-                          <a th:href="@{#}">
+                          <a th:href="@{/major/findAll}">
                               <button type="button" class="btn btn-info btn-lg btn-block" style="width: auto">
                                   <i class="mdi mdi-autorenew"></i>
                                   全部
@@ -54,11 +54,11 @@
                       </div>
                       <div style="float: left">&nbsp;&nbsp;&nbsp;&nbsp;</div>
                       <div style="display: inline;float: left">
-                          <form th:action="@{#}" method="post">
+                          <form th:action="@{/major/findByName}" method="post">
                               <div>
                                   <table>
                                       <tr>
-                                          <td><input type="text" name="name" class="form-control" placeholder="关键字搜索" aria-label="search" aria-describedby="search"></td>
+                                          <td><input type="text" name="name" class="form-control" placeholder="输入校名关键字" aria-label="search" aria-describedby="search"></td>
                                           <td><input type="submit" value="搜索" class="btn btn-dark btn-rounded btn-fw"/></td>
                                       </tr>
                                   </table>
@@ -82,14 +82,14 @@
                       </thead>
                       <tbody>
                         <tr th:each="major:${list}">
-                          <td th:text="${major.getId()}"></td>
-                          <td th:text="${major.getName()}"></td>
-                          <td th:text="${major.getSchoolName()}"></td>
-                          <td th:text="${major.getDps()}"></td>
-                          <td th:text="${major.getPlc()}"></td>
-                          <td th:text="${major.getEls()}"></td>
-                          <td><a th:href="@{#}"><button type="button" class="btn btn-warning">修改信息</button></a></td>
-                          <td><a th:href="@{#}"><button type="button" class="btn btn-danger">删除条目</button></a></td>
+                          <td th:text="${major.id}"></td>
+                          <td th:text="${major.name}"></td>
+                          <td th:text="${major.schoolName}"></td>
+                          <td th:text="${major.dps}"></td>
+                          <td th:text="${major.plc}"></td>
+                          <td th:text="${major.els}"></td>
+                          <td><a th:href="@{'/major/toUpdate/'+${major.getId()}}"><button type="button" class="btn btn-warning">修改信息</button></a></td>
+                          <td><a th:href="@{'/major/delete/'+${major.getId()}}"><button type="button" class="btn btn-danger">删除条目</button></a></td>
                         </tr>
                       </tbody>
                     </table>

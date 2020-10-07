@@ -26,7 +26,9 @@ public class PageController {
 	 * 跳转首页
 	 */
 	@RequestMapping("/")
-	public String index() {
+	public String index(Model model) {
+		int count = schoolService.count();
+		model.addAttribute("count",count);
 		return "index";
 	}
 
@@ -60,10 +62,10 @@ public class PageController {
 		int count = schoolService.count();
 		model.addAttribute("count",count);
 		model.addAttribute("pages",pages);
-		if (count%10 != 0 ){
-			model.addAttribute("allPages",count/10 + 1);
+		if (count%15 != 0 ){
+			model.addAttribute("allPages",count/15 + 1);
 		}else {
-			model.addAttribute("allPages",count/10);
+			model.addAttribute("allPages",count/15);
 		}
 		return "user/searchSchool";
 	}

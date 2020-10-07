@@ -65,7 +65,7 @@ public class SchoolServiceImpl implements SchoolService {
 
 	@Override
 	public List<School> findAllPages(int pages) {
-		Page<School> page = new Page<>(pages,10);
+		Page<School> page = new Page<>(pages,15);
 		schoolMapper.selectPage(page,null);
 		List<School> schools = page.getRecords();
 		return schools;
