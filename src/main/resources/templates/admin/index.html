@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}" />
+</head>
+<body>
+  <div class="container-scroller d-flex">
+    <!-- partial:./partials/_sidebar.html -->
+    <!--侧边栏-->
+    <div th:replace="~{admin/commons/commons::sidebar}"></div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:./partials/_navbar.html -->
+      <!--头部栏-->
+      <div th:replace="~{admin/commons/commons::topbar}"></div>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <h1>首页</h1>
+          <!-- row end -->
+          <div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card bg-facebook d-flex align-items-center">
+                <div class="card-body py-5">
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <i class="mdi mdi-qqchat text-white icon-lg"></i>
+                    <div class="ml-3 ml-md-0 ml-xl-3">
+                      <!--<h5 class="text-white font-weight-bold">联系我们</h5>-->
+                      <p class="mt-2 text-white card-text">联系我们</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card bg-google d-flex align-items-center">
+                <div class="card-body py-5">
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <i class="mdi mdi-wechat text-white icon-lg"></i>
+                    <div class="ml-3 ml-md-0 ml-xl-3">
+                      <!--<h5 class="text-white font-weight-bold">3.4k Followers</h5>-->
+                      <p class="mt-2 text-white card-text">联系我们</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card bg-twitter d-flex align-items-center">
+                <div class="card-body py-5">
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <i class="mdi mdi-square-inc-cash text-white icon-lg"></i>
+                    <div class="ml-3 ml-md-0 ml-xl-3">
+                      <h5 class="text-white font-weight-bold">打赏我们</h5>
+                      <p class="mt-2 text-white card-text">您的支持是我们前进下去的最大动力</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- row end -->
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:./partials/_footer.html -->
+        <!--页脚-->
+        <!--<div th:replace="~{admin/commons/commons::bottombar}"></div>-->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- base:js -->
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script th:src="@{/admin/vendors/chart.js/Chart.min.js}"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{/admin/js/off-canvas.js}"></script>
+  <script th:src="@{/admin/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/admin/js/template.js}"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script th:src="@{/admin/js/dashboard.js}"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

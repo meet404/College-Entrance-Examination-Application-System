@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--head-->
+  <div th:replace="~{user/commons/commons::headbar}"></div>
+  <body class="body">
+    <!--动画加载-->
+    <div th:replace="~{user/commons/commons::page-loader-bar}"></div>
+    <!--顶部-->
+    <div th:replace="~{user/commons/commons::topbar}"></div>
+    <!---->
+    <section class="white-curve-after after-head slick-top-fix section-white-text">
+      <!--头部轮播图-->
+      <div class="slick-view-banner slick-numeric-navigation slick-carousel" data-slider="top-side-numbers">
+        <div class="slick-slides">
+          <!--轮播图1-->
+          <div class="slick-slide">
+            <div class="section-white-text entity-banner content-offs section-solid bg-orange">
+              <div class="container text-center text-lg-left entity-content">
+                <div class="my-auto position-relative align-items-lg-center row">
+                  <div class="m-lg-auto d-flex z-index-2 position-relative col">
+                    <img class="px-5 px-lg-0 m-auto col-auto mw-100" th:src="@{/user/assets/images/content/x/bg1.png}" alt=""></div>
+                  <div class="col-lg-6 mr-lg-5 mt-5 my-lg-auto order-lg-first z-index-4 position-relative">
+                    <div class="h4 mt-0 text-uppercase font-weight-medium entity-subtitle"></div>
+                    <!---->
+                    <div class="h4 mt-0 text-uppercase font-weight-medium entity-subtitle">Product crafted with care</div>
+                    <p class="mb-4 pb-2 entity-text">Bred for a high content of beneficial substances. Our products are all fresh and healthy.</p>
+                    <!---->
+                    <div class="entity-action-btns">
+                      <a class="btn-wide btn btn-theme-white-bordered" href="user/shop-sidebar-right.html">shop now</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--轮播图2-->
+          <div class="slick-slide">
+            <div class="section-white-text entity-banner content-offs section-solid bg-light-green">
+              <div class="container text-center text-lg-left entity-content">
+                <div class="my-auto position-relative align-items-lg-center row">
+                  <div class="m-lg-auto d-flex z-index-2 position-relative col">
+                    <img class="px-5 px-lg-0 m-auto col-auto mw-100" th:src="@{/user/assets/images/content/x/bg2.png}" alt=""></div>
+                  <div class="col-lg-6 mr-lg-5 mt-5 my-lg-auto order-lg-first z-index-4 position-relative">
+                    <div class="h4 mt-0 text-uppercase font-weight-medium entity-subtitle"></div>
+                    <!---->
+                    <div class="h4 mt-0 text-uppercase font-weight-medium entity-subtitle">Product crafted with care</div>
+                    <p class="mb-4 pb-2 entity-text">Bred for a high content of beneficial substances. Our products are all fresh and healthy.</p>
+                    <!---->
+                    <div class="entity-action-btns">
+                      <a class="btn-wide btn btn-theme-white-bordered" href="user/shop-sidebar-right.html">shop now</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--轮播图3-->
+          <div class="slick-slide">
+            <div class="section-white-text entity-banner content-offs section-solid bg-bittersweet">
+              <div class="container text-center text-lg-left entity-content">
+                <div class="my-auto position-relative align-items-lg-center row">
+                  <div class="m-lg-auto d-flex z-index-2 position-relative col">
+                    <img class="px-5 m-auto col-auto mw-100" th:src="@{/user/assets/images/content/x/bg3.png}" alt=""></div>
+                  <div class="col-lg-5 mr-lg-5 mt-5 my-lg-auto order-lg-first z-index-4 position-relative">
+                    <div class="h4 mt-0 entity-subtitle"></div>
+                    <!---->
+                    <div class="h4 mt-0 text-uppercase font-weight-medium entity-subtitle">Product crafted with care</div>
+                    <p class="mb-4 pb-2 entity-text">Bred for a high content of beneficial substances. Our products are all fresh and healthy.</p>
+                    <!---->
+                    <div class="entity-action-btns">
+                      <a class="btn-wide btn btn-theme-white-bordered" href="user/shop-sidebar-right.html">shop now</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--轮播图4-->
+          <div class="slick-slide">
+            <div class="section-white-text entity-banner content-offs section-solid bg-pink">
+              <div class="container text-center text-lg-left entity-content">
+                <div class="my-auto position-relative align-items-lg-center row">
+                  <div class="m-lg-auto d-flex z-index-2 position-relative col">
+                    <img class="m-auto col-auto mw-100" th:src="@{/user/assets/images/content/x/bg4.png}" alt=""></div>
+                  <div class="col-lg-5 mr-lg-5 mt-5 my-lg-auto order-lg-first z-index-4 position-relative">
+                    <div class="h4 mt-0 entity-subtitle"></div>
+                    <!---->
+                    <div class="h4 mt-0 text-uppercase font-weight-medium entity-subtitle">Product crafted with care</div>
+                    <p class="mb-4 pb-2 entity-text">Bred for a high content of beneficial substances. Our products are all fresh and healthy.</p>
+                    <!---->
+                    <div class="entity-action-btns">
+                      <a class="btn-wide btn btn-theme-white-bordered" href="user/shop-sidebar-right.html">shop now</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    <section class="section">
+      <div class="section-head container left">
+        <div class="section-head-content">
+          <h2 class="section-title">Shipping and payment</h2>
+          <p class="section-text">We'll do it as fast as possible</p></div>
+      </div>
+      <div class="container">
+        <div class="grid row">
+          <div class="col-lg-3 d-flex">
+            <div class="entity-block entity-hover-shadow entity-hover-highlight entity-hover-white-icon">
+              <div class="mt-4 mb-0 mr-auto align-self-start p-2 px-4 bradr entity-icon">
+                <img class="mw-100" th:src="@{/user/assets/images/parts/icons/50/orange/shopping-basket.png}" alt=""></div>
+              <div class="entity-content">
+                <h4 class="entity-title">Order</h4>
+                <p class="mb-0 entity-text">Our manager will contact you to discuss the details of the order</p></div>
+            </div>
+          </div>
+          <div class="col d-flex align-items-center">
+            <div class="m-auto">
+              <div class="h2 lg-horizontal separator-dots-arrow">
+                <span class="separator-dot"></span>
+                <span class="separator-dot last"></span>
+                <span class="separator-arrow">
+                  <i class="fas fa-angle-down separator-show-vertical"></i>
+                  <i class="fas fa-angle-right separator-show-horizontal"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 d-flex">
+            <div class="entity-block entity-hover-shadow entity-hover-highlight entity-hover-white-icon">
+              <div class="mt-4 mb-0 mr-auto align-self-start p-2 px-4 bradr entity-icon">
+                <img class="mw-100" th:src="@{/user/assets/images/parts/icons/50/orange/card-payment.png}" alt=""></div>
+              <div class="entity-content">
+                <h4 class="entity-title">Payment</h4>
+                <p class="mb-0 entity-text">You yourself choose the period during which you will use the service</p></div>
+            </div>
+          </div>
+          <div class="col d-flex align-items-center">
+            <div class="m-auto">
+              <div class="h2 lg-horizontal separator-dots-arrow">
+                <span class="separator-dot"></span>
+                <span class="separator-dot last"></span>
+                <span class="separator-arrow">
+                  <i class="fas fa-angle-down separator-show-vertical"></i>
+                  <i class="fas fa-angle-right separator-show-horizontal"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 d-flex">
+            <div class="entity-block entity-hover-shadow entity-hover-highlight entity-hover-white-icon">
+              <div class="mt-4 mb-0 mr-auto align-self-start p-2 px-4 bradr entity-icon">
+                <img class="mw-100" th:src="@{/user/assets/images/parts/icons/50/orange/shipped.png}" alt=""></div>
+              <div class="entity-content">
+                <h4 class="entity-title">Delivery</h4>
+                <p class="mb-0 entity-text">The courier will deliver the goods at a convenient time for you.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-theme white-curve-before curve-before-60 white-curve-after curve-after-90 section-solid section-white-text">
+      <div class="section-back-text">高考</div>
+      <div class="container">
+        <div class="cols-lg row">
+          <div class="col-lg-4">
+            <div class="entity line">
+              <div class="my-auto entity-icon">
+                <img class="mw-100" th:src="@{/user/assets/images/parts/icons/100/white/in-love.png}" alt=""></div>
+              <div class="ml-4 my-auto entity-content">
+                <div class="h1 mb-1 entity-value" data-waypoint-counter="1143" data-waypoint-counter-extra="+"></div>
+                <p class="mb-0 entity-text">satisfied customers</p></div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="entity line">
+              <div class="my-auto entity-icon">
+                <img class="mw-100" th:src="@{/user/assets/images/parts/icons/100/white/handshake.png}" alt=""></div>
+              <div class="ml-4 my-auto entity-content">
+                <div class="h1 mb-1 entity-value" data-waypoint-counter="99" data-waypoint-counter-extra="%"></div>
+                <p class="mb-0 entity-text">quality of service</p></div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="entity line">
+              <div class="my-auto entity-icon">
+                <img class="mw-100" th:src="@{/user/assets/images/parts/icons/100/white/guarantee.png}" alt=""></div>
+              <div class="ml-4 my-auto entity-content">
+                <div class="h1 mb-1 entity-value" data-waypoint-counter="22" data-waypoint-counter-extra="false"></div>
+                <p class="mb-0 entity-text">quality certificates</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--留言板区-->
+    <section class="section" data-slider="testimonials">
+      <div class="section-head container left">
+        <div class="section-head-content">
+          <h2 class="section-title">留言展示</h2></div>
+        <div class="slick-arrows">
+          <div class="slick-arrow-prev">
+            <i class="fas fa-arrow-left"></i>
+          </div>
+          <div class="slick-arrow-next">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="slick-view-carousel slick-carousel">
+          <div class="slick-slides">
+            <!--test-->
+            <div class="slick-slide">
+              <div class="entity-block entity-hover-shadow">
+                <div class="pb-4 entity-content">
+                  <p class="entity-text">
+                    哈喽，这里是留言区哦！
+                  </p>
+                  <div class="entity-footer">
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        <!--苹果特效-->
+                        <div class="user-rating">
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-auto">
+                        <div class="entity-author">留言作者</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--断点-->
+            <div class="slick-slide">
+              <div class="entity-block entity-hover-shadow">
+                <div class="pb-4 entity-content">
+                  <p class="entity-text">Great tasting, love these dummies! Really help me sleep at night.</p>
+                  <div class="entity-footer">
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        <div class="user-rating">
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-auto">
+                        <div class="entity-author">Angela F.</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide">
+              <div class="entity-block entity-hover-shadow">
+                <div class="pb-4 entity-content">
+                  <p class="entity-text">I've used other online dispensaries in the past but none provided the quick service that I got from this site.</p>
+                  <div class="entity-footer">
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        <div class="user-rating">
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item rating-inactive">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-auto">
+                        <div class="entity-author">Wiliam M.</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide">
+              <div class="entity-block entity-hover-shadow">
+                <div class="pb-4 entity-content">
+                  <p class="entity-text">This is my first order, really enjoy the taste and size, takes 3 to 4 to get desired effect.</p>
+                  <div class="entity-footer">
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        <div class="user-rating">
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-auto">
+                        <div class="entity-author">Joe Soothe</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide">
+              <div class="entity-block entity-hover-shadow">
+                <div class="pb-4 entity-content">
+                  <p class="entity-text">Really help me sleep at night.</p>
+                  <div class="entity-footer">
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        <div class="user-rating">
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-auto">
+                        <div class="entity-author">Doroty Snith</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide">
+              <div class="entity-block entity-hover-shadow">
+                <div class="pb-4 entity-content">
+                  <p class="entity-text">I've used other online dispensaries in the past but none provided the quick service that I got from this site.</p>
+                  <div class="entity-footer">
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        <div class="user-rating">
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                          <span class="rating-item">
+                            <i class="fas fa-apple-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-auto">
+                        <div class="entity-author">Michael Leaf</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--留言区-->
+    <section class="section">
+      <div class="section-head">
+        <div class="section-head-content">
+          <h2 class="section-title">留下你的足迹?</h2>
+          <p class="section-text">这边请</p></div>
+      </div>
+      <div class="container">
+        <form autocomplete="off">
+          <div class="row grid justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+              <div class="input-view-flat input-gray-shadow form-group">
+                <label class="required">Your Message</label>
+                <div class="input-group">
+                  <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <button class="btn-wide mb-0 btn btn-theme" type="submit">提交</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="scroll-top">
+      <i class="fas fa-long-arrow-alt-up"></i>
+    </div>
+    <!--页脚-->
+    <div th:replace="~{user/commons/commons::footerbar}"></div>
+    <!--底部结束-->
+    <script th:src="@{/user/assets/jquery/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/user/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/user/assets/shuffle/shuffle.min.js}"></script>
+    <script th:src="@{/user/assets/waypoints/jquery.waypoints.min.js}"></script>
+    <script th:src="@{/user/assets/slick/slick.min.js}"></script>
+    <script th:src="@{/user/assets/js-cookie/js.cookie.js}" type="text/javascript"></script>
+    <script th:src="@{/user/assets/js/gmap/silver.js}"></script>
+    <script th:src="@{/user/assets/js/script.js}"></script>
+  </body>
+
+</html>

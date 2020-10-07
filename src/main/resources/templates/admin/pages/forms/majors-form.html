@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}" />
+</head>
+<body>
+  <div class="container-scroller d-flex">
+    <!--侧边栏-->
+    <div th:replace="~{admin/commons/commons::sidebar}"></div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!--顶部导航栏-->
+      <div th:replace="~{admin/commons/commons::topbar}"></div>
+      <!--表单开始-->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">专业信息</h4>
+                  <form class="form-sample" th:action="@{/major/add}" method="get">
+                    <p class="card-description">
+                      Professional information
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">专业名称</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="name" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">学校名</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="schoolId">
+                              <option th:each="schools:${schools}" th:value="${schools.id}">[[${schools.schoolName}]]</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">学科门类</label>
+                          <div class="col-sm-9">
+                            <input name="dps" class="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">专业类</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="plc" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">学制</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="els" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="submit" value="提交" class="btn btn-primary mr-2" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--表单结束-->
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{/admin/js/off-canvas.js}"></script>
+  <script th:src="@{/admin/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/admin/js/template.js}"></script>
+  <!-- endinject -->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

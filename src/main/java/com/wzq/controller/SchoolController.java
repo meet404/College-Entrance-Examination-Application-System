@@ -1,0 +1,69 @@
+package com.wzq.controller;
+
+import com.wzq.pojo.School;
+import com.wzq.service.SchoolService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+
+/**
+ * @author wzq
+ * @date 2020/10/2
+ * @email 158957716@qq.com
+ */
+@Controller
+@RequestMapping("/school")
+public class SchoolController {
+
+	@Autowired
+	protected SchoolService schoolService;
+
+	@RequestMapping("/findAll")
+	public String findAll(Model model) {
+		List<School> schoolList = schoolService.findAll();
+		model.addAttribute("schoolList", schoolList);
+		return "admin/pages/tables/school-list";
+	}
+
+	@RequestMapping("/toAdd")
+	public String toAddSchool() {
+		return "admin/pages/forms/forms-filling";
+	}
+
+	@RequestMapping("/add")
+	public String addSchool(School school) {
+		schoolService.addSchool(school);
+		return "redirect:/school/findAll";
+	}
+
+	@RequestMapping("/delete/{id}")
+	private String deleteSchool(@PathVariable("id") long id) {
+		schoolService.deleteSchool(id);
+		return "redirect:/school/findAll";
+	}
+
+	@RequestMapping("/findByName")
+	public String findByName(String name, Model model) {
+		List<School> schoolList = schoolService.findSchoolByName(name);
+		model.addAttribute("schoolList", schoolList);
+		return "admin/pages/tables/school-list";
+	}
+
+	@RequestMapping("/toUpdate/{id}")
+	public String toUpdate(@PathVariable("id") long id, Model model) {
+		School school = schoolService.findSchoolById(id);
+		model.addAttribute("school", school);
+		return "admin/pages/forms/update-forms";
+	}
+
+	@RequestMapping("/update")
+	public String updateUser(School school) {
+		schoolService.updateSchool(school);
+		return "redirect:/school/findAll";
+	}
+
+}

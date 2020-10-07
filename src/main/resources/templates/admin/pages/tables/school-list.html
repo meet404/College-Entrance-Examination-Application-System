@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}" />
+</head>
+<body>
+  <div class="container-scroller d-flex">
+    <!-- partial:../../partials/_sidebar.html -->
+    <!--侧边栏-->
+    <div th:replace="~{admin/commons/commons::sidebar}"></div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_navbar.html -->
+      <!--顶部导航栏-->
+      <div th:replace="~{admin/commons/commons::topbar}"></div>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div style="display: inline"><h4 class="card-title" style="float: left;margin-top: 18px">校园管理</h4></div>
+                 <!--操作框-->
+                  <div style="float: right">
+                      <div style="display: inline;float: left">
+                          <a th:href="@{/school/toAdd}">
+                              <button type="button" class="btn btn-primary btn-lg btn-block" style="width: auto">
+                                  <i class="mdi mdi-plus-one"></i>
+                                  新增
+                              </button>
+                          </a>
+                      </div>
+                      <div style="float: left">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                      <div style="display: inline;float: left">
+                          <a th:href="@{/school/findAll}">
+                              <button type="button" class="btn btn-info btn-lg btn-block" style="width: auto">
+                                  <i class="mdi mdi-autorenew"></i>
+                                  全部
+                              </button>
+                          </a>
+                      </div>
+                      <div style="float: left">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                      <div style="display: inline;float: left">
+                          <form th:action="@{/school/findByName}" method="post">
+                              <div>
+                                  <table>
+                                      <tr>
+                                          <td><input type="text" name="name" class="form-control" placeholder="关键字搜索" aria-label="search" aria-describedby="search"></td>
+                                          <td><input type="submit" value="搜索" class="btn btn-dark btn-rounded btn-fw"/></td>
+                                      </tr>
+                                  </table>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="table-responsive pt-3">
+                    <table class="table table-bordered" style="text-align: center">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>校园名称</th>
+                          <th>简介</th>
+                          <th>操作</th>
+                          <th>操作</th>
+                          <th>更多信息</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr th:each="school:${schoolList}">
+                          <td th:text="${school.id}"></td>
+                          <td th:text="${school.schoolName}"></td>
+                          <td th:text="${school.introduction}"></td>
+                          <td>
+                            <a th:href="@{'/school/toUpdate/'+${school.id}}"><button type="button" class="btn btn-warning">修改信息</button></a>
+                          </td>
+                          <td>
+                            <a th:href="@{'/school/delete/'+${school.id}}"><button type="button" class="btn btn-danger">删除条目</button></a>
+                          </td>
+                          <td>
+                            <a th:href="@{'/score/findAllBySchoolId/'+${school.id}}"><button type="button" class="btn btn-secondary">更多信息</button></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <!--页脚-->
+       <!-- <div th:replace="~{admin/commons/commons::bottombar}"></div>-->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{/admin/js/off-canvas.js}"></script>
+  <script th:src="@{/admin/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/admin/js/template.js}"></script>
+  <!-- endinject -->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

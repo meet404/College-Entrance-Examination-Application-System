@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}" />
+</head>
+<body>
+  <div class="container-scroller d-flex">
+    <!--侧边栏-->
+    <div th:replace="~{admin/commons/commons::sidebar}"></div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!--顶部导航栏-->
+      <div th:replace="~{admin/commons/commons::topbar}"></div>
+      <!-- partial -->
+
+      <!--表单开始-->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">修改校园信息</h4>
+                  <form th:action="@{/school/update}" method="post" class="form-sample">
+                    <input type="hidden" name="id" th:value="${school.id}"/>
+                    <p class="card-description">
+                      基本信息
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">学校名称：</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="schoolName" th:value="${school.schoolName}" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">校园简介：</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="introduction" th:value="${school.introduction}" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="submit" value="提交修改" class="btn btn-primary mr-2" />
+                    <!--<input type="reset" value="取消" class="btn btn-light" />-->
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--表单结束-->
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{/admin/js/off-canvas.js}"></script>
+  <script th:src="@{/admin/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/admin/js/template.js}"></script>
+  <!-- endinject -->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
