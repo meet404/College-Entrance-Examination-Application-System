@@ -23,28 +23,6 @@ public class PageController {
 	public SchoolService schoolService;
 
 	/**
-	 * 跳转首页
-	 */
-	@RequestMapping("/")
-	public String index(Model model) {
-		int count = schoolService.count();
-		model.addAttribute("count",count);
-		return "index";
-	}
-
-	/**
-	 * 跳转查大学页面
-	 */
-	@RequestMapping("/searchSchool")
-	public String searchUniversity(Model model) {
-		List<School> schoolListUser = schoolService.findAll();
-		int count = schoolService.count();
-		model.addAttribute("schoolListUser",schoolListUser);
-		model.addAttribute("count",count);
-		return "user/searchSchool";
-	}
-
-	/**
 	 * 跳转到专业页面
 	 */
 	@RequestMapping("/searchMajor")

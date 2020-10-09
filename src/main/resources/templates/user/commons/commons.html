@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <!--head-->
 <head th:fragment="headbar">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,7 +26,7 @@
 <header class="header-colorfull header-horizontal header-over header-view-side" th:fragment="topbar">
     <div class="container">
         <nav class="navbar" >
-            <a class="navbar-brand" th:href="@{/page/}">
+            <a class="navbar-brand" th:href="@{/}">
             <span class="logo-element-line">
               <span class="logo-text">测试用页面</span>
             </span>
@@ -39,12 +39,12 @@
                 <div class="container">
                     <ul class="navbar-nav">
                         <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
-                            <a class="nav-link" th:href="@{/page/}">首页</a>
+                            <a class="nav-link" th:href="@{/}">首页</a>
                         </li>
                         <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
                             <a class="nav-link" href="#" data-role="nav-toggler">数据查询
                                 <span class="nav-arrow">
-                      <i class="fas fa-chevron-down"></i></span>
+                                <i class="fas fa-chevron-down"></i></span>
                             </a>
                             <ul class="collapse nav">
                                 <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
@@ -82,12 +82,24 @@
                     <!--头部右侧搜索部分-->
                     <div class="navbar-extra">
                         <ul class="actions-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" style="font-size: 15px">
+                            <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
+                                <a class="nav-link" th:if="${session.user == null}" th:href="@{/login/toLogin}" style="font-size: 15px">
                                     <i class="fas fa-user"></i>登陆/注册</a>
+                                <a class="nav-link" href="#" data-role="nav-toggler" th:if="${session.user != null}">欢迎用户：
+                                    <shiro:principal property="username"></shiro:principal>
+                                    <span class="nav-arrow">
+                                <i class="fas fa-chevron-down"></i></span></a>
+                                <ul class="collapse nav" th:if="${session.user != null}">
+                                    <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
+                                        <a class="nav-link" th:href="@{#}">个人中心</a>
+                                    </li>
+                                    <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
+                                        <a class="nav-link" th:href="@{/login/logout}">登出</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" th:href="@{/admin/}" style="font-size: 15px">进入后台</a>
+                                <a shiro:hasRole="super_admin" class="nav-link" th:href="@{/admin/index}" style="font-size: 15px">进入后台</a>
                             </li>
                         </ul>
                     </div>

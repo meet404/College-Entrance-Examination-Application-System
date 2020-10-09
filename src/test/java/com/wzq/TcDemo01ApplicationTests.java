@@ -9,9 +9,12 @@ import com.wzq.mapper.ScoreMapper;
 import com.wzq.pojo.Major;
 import com.wzq.pojo.School;
 import com.wzq.pojo.Score;
+import com.wzq.pojo.User;
 import com.wzq.service.HeatService;
 import com.wzq.service.SchoolService;
+import com.wzq.service.UserService;
 import com.wzq.utils.GuuidUtil;
+import com.wzq.utils.GetSaltUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,6 +38,9 @@ class TcDemo01ApplicationTests {
 
 	@Autowired
 	private SchoolService schoolService;
+
+	@Autowired
+	private UserService userService;
 
 	@Test
 	void contextLoads() {
@@ -96,5 +102,16 @@ class TcDemo01ApplicationTests {
 		List<Major> all = majorMapper.findAll();
 		PageInfo<Major> pageInfo = new PageInfo<>(all);
 		System.out.println(pageInfo);
+	}
+
+	@Test
+	public void test10(){
+		User user = userService.querryUserLogin("test");
+		System.out.println(user);
+	}
+
+	@Test
+	public void test11(){
+
 	}
 }

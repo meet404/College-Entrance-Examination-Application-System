@@ -22,13 +22,6 @@ public class SchoolController {
 	@Autowired
 	protected SchoolService schoolService;
 
-	@RequestMapping("/findAll")
-	public String findAll(Model model) {
-		List<School> schoolList = schoolService.findAll();
-		model.addAttribute("schoolList", schoolList);
-		return "admin/pages/tables/school-list";
-	}
-
 	/**
 	 * 跳转查大学页面，分页查询
 	 */
@@ -55,13 +48,13 @@ public class SchoolController {
 	@RequestMapping("/add")
 	public String addSchool(School school) {
 		schoolService.addSchool(school);
-		return "redirect:/school/findAll";
+		return "redirect:/school/schoolList/1";
 	}
 
 	@RequestMapping("/delete/{id}")
 	private String deleteSchool(@PathVariable("id") long id) {
 		schoolService.deleteSchool(id);
-		return "redirect:/school/findAll";
+		return "redirect:/school/schoolList/1";
 	}
 
 	@RequestMapping("/findByName")
@@ -81,7 +74,7 @@ public class SchoolController {
 	@RequestMapping("/update")
 	public String updateUser(School school) {
 		schoolService.updateSchool(school);
-		return "redirect:/school/findAll";
+		return "redirect:/school/schoolList/1";
 	}
 
 }

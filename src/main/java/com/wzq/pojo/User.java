@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author wzq
@@ -26,6 +27,16 @@ public class User {
 
 	private String password;
 
+	private Integer userStatus;
+
+	private String gender;
+
+	private String privateSalt;
+
+	private String email;
+
+	private Integer roleId;
+
 	@TableLogic
 	private Integer deleted;
 
@@ -34,4 +45,5 @@ public class User {
 
 	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date gmtModified;
+
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}" />
+</head>
+
+<body>
+  <div class="container-scroller d-flex">
+    <div class="container-fluid page-body-wrapper full-page-wrapper d-flex">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <h4>新来的？</h4>
+              <h6 class="font-weight-light">注册很容易。只需要几步</h6>
+              <form class="pt-3" th:action="@{/login/addUser}" method="post">
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" name="username" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" name="password" placeholder="password" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                  <p style="display: inline">选择您的性别：</p>
+                  <input type="radio" name="gender" value="1">男
+                  <input type="radio" name="gender" value="0">女
+                </div>
+                <div class="mb-4">
+                  <div class="form-check">
+                    <label class="form-check-label text-muted">
+                      <input type="checkbox" class="form-check-input" required>
+                      我同意所有条款和条件
+                    </label>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="注册" />
+                </div>
+                <div class="text-center mt-4 font-weight-light">
+                  已有账号? <a th:href="@{/login/toLogin}" class="text-primary">登陆</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script th:src="@{/admin/js/off-canvas.js}"></script>
+  <script th:src="@{/admin/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/admin/js/template.js}"></script>
+  <!-- endinject -->
+</body>
+
+</html>
