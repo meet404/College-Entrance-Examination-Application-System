@@ -1,0 +1,55 @@
+package com.wzq.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.wzq.mapper.UserMapper;
+import com.wzq.pojo.User;
+import com.wzq.service.UserService;
+import com.wzq.utils.GetSaltUtil;
+import org.apache.shiro.crypto.hash.Md5Hash;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Set;
+
+/**
+ * @author wzq
+ * @date 2020/10/9
+ * @email 158957716@qq.com
+ */
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserMapper userMapper;
+
+	@Override
+	public int addUser(User user) {
+		String password = user.getPassword();
+		String salt = GetSaltUtil.getSalt();
+		user.setPrivateSalt(salt);
+		Md5Hash md5Hash = new Md5Hash(password, salt, 1); //模拟md5加密一次
+		user.setPassword(md5Hash.toString());
+		user.setUserStatus(0);
+		return userMapper.insert(user);
+	}
+
+	@Override
+	public User querryUserLogin(String username) {
+		QueryWrapper<User> wrapper = new QueryWrapper<>();
+		wrapper.eq("username", username).eq("user_status", 0);
+		User user = userMapper.selectOne(wrapper);
+		return user;
+	}
+
+	@Override
+	public Set<String> findRolesByUsername(String username) {
+		return userMapper.findRolesByUsername(username);
+	}
+
+	@Override
+	public Set<String> findPermissionsByUsername(String username) {
+		return userMapper.findPermissionsByUsername(username);
+	}
+
+}
