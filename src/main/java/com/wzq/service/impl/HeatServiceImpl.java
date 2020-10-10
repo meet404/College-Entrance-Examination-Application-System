@@ -1,8 +1,6 @@
 package com.wzq.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.wzq.mapper.HeatMapper;
-import com.wzq.pojo.Heat;
 import com.wzq.service.HeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

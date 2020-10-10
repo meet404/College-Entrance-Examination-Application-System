@@ -1,7 +1,9 @@
 package com.wzq.service;
 
+import com.wzq.pojo.School;
 import com.wzq.pojo.User;
 
+import javax.mail.MessagingException;
 import java.util.Set;
 
 /**
@@ -42,5 +44,9 @@ public interface UserService {
 	 */
 	Set<String> findPermissionsByUsername(String username);
 
+
+	int activeUser(User user);
+
+	User findUserById(long id);
 
 }

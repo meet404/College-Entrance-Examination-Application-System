@@ -1,6 +1,5 @@
 package com.wzq.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.wzq.pojo.School;
 
 import java.util.List;
@@ -44,7 +43,7 @@ public interface SchoolService {
 	List<School> findSchoolByName(String name);
 
 	/**
-	 * 通过ip查找
+	 * 通过id查找
 	 *
 	 * @param id
 	 * @return

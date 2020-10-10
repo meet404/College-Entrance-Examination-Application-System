@@ -1,14 +1,10 @@
 package com.wzq.controller;
 
-import com.wzq.pojo.User;
-import com.wzq.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/login")
 public class LoginController {
 
-	@Autowired
-	private UserService userService;
-
 	/**
 	 * 前往登陆页面
 	 *
@@ -33,28 +26,6 @@ public class LoginController {
 	@RequestMapping("/toLogin")
 	public String toLogin() {
 		return "login/login";
-	}
-
-	/**
-	 * 前往注册页面
-	 *
-	 * @return
-	 */
-	@RequestMapping("/toRegister")
-	public String toRegister() {
-		return "login/register";
-	}
-
-	/**
-	 * 注册
-	 *
-	 * @param user
-	 * @return
-	 */
-	@RequestMapping("/addUser")
-	public String addUser(User user) {
-		userService.addUser(user);
-		return "redirect:/login/toLogin";
 	}
 
 	/**
@@ -82,10 +53,5 @@ public class LoginController {
 			return "login/login";
 		}
 	}
-
-	/*@RequestMapping("/loginOut")
-	public String loginOut(){
-
-	}*/
 
 }

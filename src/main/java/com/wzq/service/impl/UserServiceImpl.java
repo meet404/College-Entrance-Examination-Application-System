@@ -1,6 +1,7 @@
 package com.wzq.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.wzq.mapper.UserMapper;
 import com.wzq.pojo.User;
 import com.wzq.service.UserService;
@@ -9,7 +10,6 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 		user.setPrivateSalt(salt);
 		Md5Hash md5Hash = new Md5Hash(password, salt, 1); //模拟md5加密一次
 		user.setPassword(md5Hash.toString());
-		user.setUserStatus(0);
+		user.setUserStatus(2);
 		return userMapper.insert(user);
 	}
 
@@ -50,6 +50,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Set<String> findPermissionsByUsername(String username) {
 		return userMapper.findPermissionsByUsername(username);
+	}
+
+	@Override
+	public int activeUser(User user) {
+		return userMapper.updateById(user);
+	}
+
+	@Override
+	public User findUserById(long id) {
+		return userMapper.selectById(id);
 	}
 
 }

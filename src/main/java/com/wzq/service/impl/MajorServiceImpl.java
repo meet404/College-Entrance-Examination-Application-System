@@ -1,9 +1,7 @@
 package com.wzq.service.impl;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wzq.mapper.MajorMapper;
 import com.wzq.pojo.Major;
-import com.wzq.pojo.School;
 import com.wzq.service.MajorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

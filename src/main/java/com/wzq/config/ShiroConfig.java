@@ -40,7 +40,8 @@ public class ShiroConfig {
 		 */
 		filterMap.put("/", "anon");
 		filterMap.put("/login/toLogin", "anon");
-		filterMap.put("/login/toRegister", "anon");
+		filterMap.put("/user/toRegister", "anon");
+		filterMap.put("/active/*", "anon");
 
 		/**
 		 * 需要授权
@@ -81,7 +82,10 @@ public class ShiroConfig {
 		return securityManager;
 	}
 
-	//创建realm对象
+	/**
+	 * 创建realm对象
+	 * @return
+	 */
 	@Bean
 	public UserRealm userRealm() {
 		UserRealm userRealm = new UserRealm();

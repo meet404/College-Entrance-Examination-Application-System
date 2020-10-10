@@ -20,7 +20,6 @@ import java.util.List;
 public class User {
 
 	@TableId(type = IdType.INPUT)
-	@TableField(fill = FieldFill.INSERT)
 	private Long id;
 
 	private String username;
@@ -45,5 +44,8 @@ public class User {
 
 	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date gmtModified;
+
+	@TableField(exist = false)
+	private String code;
 
 }

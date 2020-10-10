@@ -1,24 +1,25 @@
-# Getting Started
+**~~高考志愿填报智能辅助系统的设计与实现**~~
 
-### Reference Documentation
-For further reference, please consider the following sections:
+本系统针对新高考改革下的志愿填报政策设计并实现了填报辅助系统，该系统通过收集各高校历年录取信息，结合志愿填报的新政策，为志愿填报进行辅助决策。
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/maven-plugin/reference/html/#build-image)
-* [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#configuration-metadata-annotation-processor)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
-* [MyBatis Framework](https://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#using-boot-devtools)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-spring-mvc-template-engines)
+1.高校信息（管理员登录系统录入各高校信息，专业信息）
 
-### Guides
-The following guides illustrate how to use some features concretely:
+2.用户信息（用户注册后登陆系统，填入志愿信息）
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [MyBatis Quick Start](https://github.com/mybatis/spring-boot-starter/wiki/Quick-Start)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
+3.查看专业信息（查看高校历年专业录取信息）
 
+4.估分推荐（估分后，系统根据填入的志愿信息推荐志愿的学校）
+
+5.留言评价（用户可以在系统中留言或者进行评价）
+
+##### 更新信息：
+
+v0.0.3分页显示，对接后端数据 2020年10月6日
+
+v0.0.3.3.1添加登陆授权test 2020年10月8日
+
+v0.0.3.4增加shiro权限支持 2020年10月9日
+
+v0.0.4增加用户密码加密功能 2020年10月9日
+
+v0.0.4增加用户邮箱验证 2020年10月10日
