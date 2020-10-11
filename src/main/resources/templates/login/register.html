@@ -27,6 +27,7 @@
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <h4>新来的？</h4>
               <h6 class="font-weight-light">注册很容易。只需要几步</h6>
+              <p th:if="${msg != null}" th:text="${msg}" style="color: red"></p>
               <form class="pt-3" th:action="@{/user/addUser}" method="post">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="username" placeholder="username" required>

@@ -1,9 +1,7 @@
 package com.wzq.service;
 
-import com.wzq.pojo.School;
 import com.wzq.pojo.User;
 
-import javax.mail.MessagingException;
 import java.util.Set;
 
 /**
@@ -21,12 +19,12 @@ public interface UserService {
 	int addUser(User user);
 
 	/**
-	 * 登陆认证
+	 * 登陆判断
 	 *
 	 * @param username
 	 * @return
 	 */
-	User querryUserLogin(String username);
+	User loginUserByName(String username);
 
 	/**
 	 * 查找角色
@@ -44,9 +42,36 @@ public interface UserService {
 	 */
 	Set<String> findPermissionsByUsername(String username);
 
-
+	/**
+	 * 激活用户
+	 *
+	 * @param user
+	 * @return
+	 */
 	int activeUser(User user);
 
+	/**
+	 * 根据id查找用户
+	 *
+	 * @param id
+	 * @return
+	 */
 	User findUserById(long id);
+
+	/**
+	 * 通过邮箱查找
+	 *
+	 * @param email
+	 * @return
+	 */
+	User findUserByEmail(String email);
+
+	/**
+	 * 通过用户名查找
+	 *
+	 * @param name
+	 * @return
+	 */
+	User findUserByName(String username);
 
 }

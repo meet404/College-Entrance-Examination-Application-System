@@ -1,7 +1,6 @@
 package com.wzq.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.wzq.mapper.UserMapper;
 import com.wzq.pojo.User;
 import com.wzq.service.UserService;
@@ -28,14 +27,14 @@ public class UserServiceImpl implements UserService {
 		String password = user.getPassword();
 		String salt = GetSaltUtil.getSalt();
 		user.setPrivateSalt(salt);
-		Md5Hash md5Hash = new Md5Hash(password, salt, 1); //模拟md5加密一次
+		Md5Hash md5Hash = new Md5Hash(password, salt, 1); //md5加密一次
 		user.setPassword(md5Hash.toString());
 		user.setUserStatus(2);
 		return userMapper.insert(user);
 	}
 
 	@Override
-	public User querryUserLogin(String username) {
+	public User loginUserByName(String username) {
 		QueryWrapper<User> wrapper = new QueryWrapper<>();
 		wrapper.eq("username", username).eq("user_status", 0);
 		User user = userMapper.selectOne(wrapper);
@@ -60,6 +59,22 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUserById(long id) {
 		return userMapper.selectById(id);
+	}
+
+	@Override
+	public User findUserByEmail(String email) {
+		QueryWrapper<User> wrapper = new QueryWrapper<>();
+		wrapper.eq("email", email);
+		User user = userMapper.selectOne(wrapper);
+		return user;
+	}
+
+	@Override
+	public User findUserByName(String username) {
+		QueryWrapper<User> wrapper = new QueryWrapper<>();
+		wrapper.eq("username", username);
+		User user = userMapper.selectOne(wrapper);
+		return user;
 	}
 
 }

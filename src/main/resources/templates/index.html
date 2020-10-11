@@ -431,7 +431,8 @@
               </div>
             </div>
             <div class="col-12 text-center">
-              <button class="btn-wide mb-0 btn btn-theme" type="submit">提交</button></div>
+              <button th:if="${session.user == null}" class="btn-wide mb-0 btn btn-theme" type="submit">去登陆</button>
+              <button th:if="${session.user != null}" class="btn-wide mb-0 btn btn-theme" type="submit">提交66666</button></div>
           </div>
         </form>
       </div>

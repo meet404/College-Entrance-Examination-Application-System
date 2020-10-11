@@ -2,6 +2,7 @@ package com.wzq.controller;
 
 import com.wzq.pojo.User;
 import com.wzq.service.UserService;
+import com.wzq.utils.GuuidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ActiveController {
 
+	private static final long UUID_LENGTH = String.valueOf(GuuidUtil.getUUID()).length();
+
 	@Autowired
 	private UserService userService;
 
@@ -26,21 +29,18 @@ public class ActiveController {
 	 */
 	@RequestMapping("/active/{id}")
 	public String activeUser(@PathVariable("id") long id) {
-		if (String.valueOf(id).length() != 18) {
+		if (String.valueOf(id).length() != UUID_LENGTH) {
 			return "/error/404";
-		} else {
+		} else if (userService.findUserById(id) == null) {
+			return "/user/page3";
+		} else if (userService.findUserById(id).getUserStatus().equals(2)) {
 			User user = userService.findUserById(id);
-			if (user == null) {
-				return "/user/page3";
-			} else {
-				if (user.getUserStatus() == 2) {
-					user.setUserStatus(0);
-					userService.activeUser(user);
-					return "/user/page2";
-				} else {
-					return "/user/page3";
-				}
-			}
+			user.setUserStatus(0);
+			userService.activeUser(user);
+			return "/user/page2";
+		} else {
+			return "/user/page3";
 		}
 	}
+
 }

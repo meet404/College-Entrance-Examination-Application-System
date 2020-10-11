@@ -115,8 +115,8 @@ class TcDemo01ApplicationTests {
 
 	@Test
 	public void test10() {
-		User user = userService.querryUserLogin("test");
-		System.out.println(user);
+		/*User user = userService.querryUserLogin("test");
+		System.out.println(user);*/
 	}
 
 	@Test

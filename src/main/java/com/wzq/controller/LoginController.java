@@ -1,10 +1,12 @@
 package com.wzq.controller;
 
+import com.wzq.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/login")
 public class LoginController {
 
+	@Autowired
+	private UserService userService;
+
 	/**
 	 * 前往登陆页面
 	 *
@@ -30,6 +35,7 @@ public class LoginController {
 
 	/**
 	 * 执行登陆请求
+	 * TODO:此处if判断几率性报空指针，待修复
 	 *
 	 * @param username
 	 * @param password
@@ -46,8 +52,13 @@ public class LoginController {
 			subject.login(token);//执行登陆
 			return "redirect:/";
 		} catch (UnknownAccountException e) {
-			model.addAttribute("msg", "用户名错误");
-			return "login/login";
+			if (userService.findUserByName(username).getUserStatus().equals(2)) {
+				model.addAttribute("msg", "该用户尚未激活");
+				return "login/login";
+			} else {
+				model.addAttribute("msg", "用户名错误");
+				return "login/login";
+			}
 		} catch (IncorrectCredentialsException e) {
 			model.addAttribute("msg", "密码错误");
 			return "login/login";

@@ -60,7 +60,7 @@ public class UserRealm extends AuthorizingRealm {
 
 		UsernamePasswordToken userToken = (UsernamePasswordToken) token;
 		//数据库拿密码
-		User user = userService.querryUserLogin(userToken.getUsername());
+		User user = userService.loginUserByName(userToken.getUsername());
 		if (user == null) {
 			return null;
 		}

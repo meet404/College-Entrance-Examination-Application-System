@@ -20,7 +20,7 @@ public class EmailService {
 	/**
 	 * 设置发件人
 	 */
-	private static String sendEmail = "yourhero666@126.com";
+	private static final String sendEmail = "yourhero666@126.com";
 
 	@Autowired
 	JavaMailSenderImpl mailSender;
